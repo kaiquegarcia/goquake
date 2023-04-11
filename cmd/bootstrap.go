@@ -16,6 +16,8 @@ func Bootstrap() bool {
 	switch cmd {
 	case "report":
 		return report()
+	case "rank":
+		return rank()
 	case "help":
 		help("")
 		return false

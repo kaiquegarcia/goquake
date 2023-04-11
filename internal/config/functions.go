@@ -12,6 +12,10 @@ func GroupBy(groupBy string) {
 	conf.GroupBy = groupBy
 }
 
+func Ranking(ranking bool) {
+	conf.Ranking = ranking
+}
+
 func Get() Config {
 	return conf
 }
