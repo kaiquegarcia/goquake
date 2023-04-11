@@ -12,7 +12,7 @@
 # How to use
 
 1. Clone the repository
-2. Run `go run .` to call the program.
+2. Run `go run . report` to call the program.
 
 # Customizations
 
@@ -24,7 +24,7 @@ You can send some arguments to customize the program and execute more cool stuff
 
 Example:
 ```
-go run . --group-by mean --world-as-player false --filepath qgames.log
+go run . report --group-by mean --world-as-player false --filepath qgames.log
 ```
 
 You can also see the `help` message with `go run . help`.
