@@ -5,7 +5,7 @@ import "fmt"
 func help(cmd string) {
 	cmdDescription := helpDefault()
 	switch cmd {
-	case "help":
+	case "report":
 		cmdDescription = helpReport()
 	}
 
