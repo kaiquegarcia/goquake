@@ -17,11 +17,16 @@ func (stat *Stat) initializePlayer(playerName string) {
 
 func (stat *Stat) AddKill(event event.Event, considerWorldAsPlayer bool) {
 	stat.TotalKills++
+	stat.initializePlayer(event.Target)
+	isAuthorPlayer := event.IsAuthorPlayer()
+	shouldScoreAuthor := considerWorldAsPlayer || isAuthorPlayer
 
-	if event.IsAuthorPlayer() || considerWorldAsPlayer {
+	if shouldScoreAuthor {
 		stat.initializePlayer(event.Author)
-		stat.initializePlayer(event.Target)
-
 		stat.Kills[event.Author]++
+	}
+
+	if !isAuthorPlayer {
+		stat.Kills[event.Target]--
 	}
 }
