@@ -25,7 +25,7 @@ func (game Data) Stats(considerWorldAsPlayer bool) *Stat {
 			stats.AddKill(event, considerWorldAsPlayer)
 		}
 
-		if event.IsScoreEvent() {
+		if event.IsScoreEvent() || event.IsClientUserInfoChanged() {
 			stats.InitializePlayer(event.Author)
 		}
 	}

@@ -30,3 +30,7 @@ func (event Event) IsKillEvent() bool {
 func (event Event) IsScoreEvent() bool {
 	return event.Type == types.TypeScore
 }
+
+func (event Event) IsClientUserInfoChanged() bool {
+	return event.Type == types.TypeClientUserInfoChanged
+}
