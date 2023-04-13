@@ -6,8 +6,8 @@ import (
 	"regexp"
 )
 
-var logPattern = regexp.MustCompile(`(?s)(\d{1,3}):(\d{2}) (\w{2,15}): (.{1,120})\n`)
-var killPattern = regexp.MustCompile(`(\d{1,4}) (\d{1,4}) (\d{1,3}): (.{2,15}) killed (.{2,15}) by ([A-Z_]{4,30})`)
+var logPattern = regexp.MustCompile(`(?s)([0-9]{1,3}):([0-9]{2}) ([A-Za-z\_]{2,30}): ([^\n]{1,120})\n`)
+var killPattern = regexp.MustCompile(`([0-9]{1,4}) ([0-9]{1,4}) ([0-9]{1,3}): (.{2,15}) killed (.{2,15}) by ([A-Z_]{4,30})`)
 
 func parseGameLog(gameLog string) []event.Event {
 	var events []event.Event
