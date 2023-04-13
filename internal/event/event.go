@@ -26,3 +26,7 @@ func (event Event) IsAuthorPlayer() bool {
 func (event Event) IsKillEvent() bool {
 	return event.Type == types.TypeKill
 }
+
+func (event Event) IsScoreEvent() bool {
+	return event.Type == types.TypeScore
+}

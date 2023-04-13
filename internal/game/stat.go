@@ -8,7 +8,7 @@ type Stat struct {
 	Kills      map[string]int `json:"kills"`
 }
 
-func (stat *Stat) initializePlayer(playerName string) {
+func (stat *Stat) InitializePlayer(playerName string) {
 	if _, exists := stat.Kills[playerName]; !exists {
 		stat.Kills[playerName] = 0
 		stat.Players = append(stat.Players, playerName)
@@ -17,12 +17,12 @@ func (stat *Stat) initializePlayer(playerName string) {
 
 func (stat *Stat) AddKill(event event.Event, considerWorldAsPlayer bool) {
 	stat.TotalKills++
-	stat.initializePlayer(event.Target)
+	stat.InitializePlayer(event.Target)
 	isAuthorPlayer := event.IsAuthorPlayer()
 	shouldScoreAuthor := considerWorldAsPlayer || isAuthorPlayer
 
 	if shouldScoreAuthor {
-		stat.initializePlayer(event.Author)
+		stat.InitializePlayer(event.Author)
 		stat.Kills[event.Author]++
 	}
 

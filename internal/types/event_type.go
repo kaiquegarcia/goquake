@@ -12,6 +12,7 @@ const (
 	TypeShutdownGame          EventType = "ShutdownGame"
 	TypeItem                  EventType = "Item"
 	TypeKill                  EventType = "Kill"
+	TypeScore                 EventType = "score"
 )
 
 func EventTypes() []EventType {
