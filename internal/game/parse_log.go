@@ -32,7 +32,7 @@ func ParseLog(log string) map[string]interface{} {
 		if gameCounter < 10 {
 			number = "0" + number
 		}
-		games["game-"+number] = result
+		games["game_"+number] = result
 		gameCounter++
 	}
 
