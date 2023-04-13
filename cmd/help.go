@@ -7,6 +7,8 @@ func help(cmd string) {
 	switch cmd {
 	case "report":
 		cmdDescription = helpReport()
+	case "rank":
+		cmdDescription = helpRank()
 	}
 
 	fmt.Printf(`
@@ -61,5 +63,22 @@ func helpReport() string {
 # Currently, the only option to '<txt>' is
 # 'mean', so we group the result by 'mean'.
 # Anything else will be ignored.
+===============================================`
+}
+
+func helpRank() string {
+	return `
+#
+# To see the ranking, put a Quake Game log in
+# the same folder of the program with 
+# the filename 'qgames.log'.
+#
+# You can also customize some config:
+===============================================
+# '-f <txt>' or '--filepath <txt>'
+# Use this argument to change the log filepath
+# to be parsed. If it's not possible to find
+# the file, an error will be printed as
+# response.
 ===============================================`
 }
